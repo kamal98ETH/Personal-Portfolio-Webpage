@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#header {
+    width: 100%;
+    height: 80px;
+    background-color: #be3144;
+    border-bottom: 2px solid black;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+#navbar {
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    display: flex;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#header-link {
+    font-size: 25px;
+    padding: 25px;
+}
+
+#header-link:hover {
+    background-color: #45567d;
+}
+
+#welcome-section {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg,
+            rgb(60, 60, 60),
+            rgb(25, 25, 25));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#welcome-section h1 {
+    color: white;
+    font-size: 60px;
+}
+
+#welcome-section p {
+    color: #be3144;
+    font-size: 40px;
+    font-style: italic;
+    font-family: roboto;
+}
+
+#projects {
+    width: 100%;
+    background-color: #45567d;
+    padding: 115px 20px 100px;
+}
+
+#projects h2 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 40px;
+    color: white;
+    padding-bottom: 30px;
+}
+
+#tiles {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 40px;
+    padding: 30px 0;
+}
+
+.project-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-tile img {
+    object-fit: cover;
+    width: 400px;
+    height: 390px;
+}
+
+.project-tile a {
+    background-color: #303841;
+}
+
+.project-tile p {
+    padding: 25px;
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+@media only screen and (max-width: 1335px) {
+    .project-tile img {
+        width: calc((100vw - 120px) / 3);
+        height: calc(385px - (400px - calc((100vw - 120px) / 3)));
+    }
+}
+
+@media only screen and (max-width: 1215px) {
+    #tiles {
+        grid-template-columns: auto auto;
+    }
+
+    .project-tile img {
+        width: calc((100vw - 80px) / 2);
+        height: calc(385px - (400px - calc((100vw - 80px) / 2)));
+    }
+}
+
+@media only screen and (max-width: 810px) {
+    #tiles {
+        grid-template-columns: auto;
+    }
+
+    .project-tile img {
+        width: calc(100vw - 40px);
+        height: calc(385px - (400px - calc(100vw - 40px)));
+    }
+}
+
+.project-tile a:hover p::before {
+    opacity: 1;
+}
+
+.project-tile p::before {
+    content: "<";
+    margin-right: 10px;
+    color: #be3144;
+    opacity: 0;
+    transition: 1s;
+}
+
+.project-tile a:hover p::after {
+    opacity: 1;
+}
+
+.project-tile p::after {
+    content: "/>";
+    margin-left: 10px;
+    color: #be3144;
+    opacity: 0;
+    transition: 1s;
+}
+
+#more {
+    width: 150px;
+    height: 50px;
+    margin: 30px auto;
+    display: flex;
+    background-color: #303841;
+    padding-left: 30px;
+    align-items: center;
+    font-size: 20px;
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+#to-sign {
+    margin-left: 5px;
+    transition: 1s;
+}
+
+#more:hover {
+    background-color: #be3144;
+}
+
+#more:hover #to-sign {
+    margin-left: 10px;
+    transition: 1s;
+}
+
+#contact {
+    width: 100%;
+    height: 860px;
+    background-color: #303841;
+    text-align: center;
+}
+
+#contact h2 {
+    color: white;
+    font-size: 60px;
+    padding-top: 350px;
+}
+
+#contact p {
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+    font-family: roboto;
+    padding: 10px 0 60px;
+}
+
+#links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.profile-link a {
+    font-size: 25px;
+    padding: 15px;
+    transition: 1s;
+}
+
+.profile-link {
+    transition: 1s;
+}
+
+.profile-link:hover {
+    transform: translate(0, 10px);
+    transition: 1s;
+}
+
+#footer {
+    background-color: #303841;
+    border-top: 5px solid #be3144;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#disclaimer {
+    width: 70%;
+    padding: 40px 5%;
+}
+
+#copyright {
+    width: 30%;
+    padding: 40px 2%;
+}
